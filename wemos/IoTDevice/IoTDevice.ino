@@ -135,12 +135,19 @@ void getURL(String url) {
           j2 = getNextSubstringPlacement(str, j + 1);
           int x2 = 1;
           int i = j + 1;
+          Serial.println("----------------------------------------");
           while (j2 != -1) {
             res[x2] = str.substring(i, j2);
+
+            Serial.print(x2);
+            Serial.print(" : ");
+            Serial.println(res[x2]);
+            
             x2++;
             i = j2 + 1;
             j2 = getNextSubstringPlacement(str, j2 + 1);
           }
+          Serial.println("----------------------------------------");
           if (x > 0) {
             if (res[0] == "device") {
               if (res[1] == "registered") {
